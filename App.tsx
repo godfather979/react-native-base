@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Button, Text} from 'react-native';
 import Tutorial from './Tutorial';
 import Rewards from './Rewards';
+import Map from './Maps';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,12 @@ const HomeScreen = ({navigation}) => {
         navigation.navigate('Rewards')
       }
     />
+    <Button
+      title="Go to map"
+      onPress={() =>
+        navigation.navigate('Map')
+      }
+    />
 
     </>
     
@@ -48,6 +55,7 @@ const App = () => {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Tutorial" component={Tutorial} />
         <Stack.Screen name="Rewards" component={Rewards} />
+        <Stack.Screen name="Map" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>
   );
